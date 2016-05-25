@@ -1,3 +1,4 @@
+import React from 'react';
 import { Route, IndexRoute, Link } from 'react-router';
 import App from './App';
 import CounterPage from './Counter/CounterPage';

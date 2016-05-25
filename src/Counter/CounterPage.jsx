@@ -1,11 +1,12 @@
-import { Component } from 'react';
+import React, { Component } from 'react';
 import Counter from './Counter';
-import 'Counter/CounterPage.scss';
+import './CounterPage.scss';
 
 export default class CounterPage extends Component {
   constructor(props) {
     super(props);
     this.state = { increment: 10 };
+    this.randIncrement = this.randIncrement.bind(this);
   }
 
   randIncrement() {

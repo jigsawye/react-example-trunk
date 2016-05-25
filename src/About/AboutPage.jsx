@@ -1,11 +1,3 @@
-import { Component } from 'react';
+import React from 'react';
 
-export default class AboutPage extends Component {
-  render() {
-    return (
-      <div>
-        hi, I'm ZeT;
-      </div>
-    );
-  }
-}
+export default () => <div>hi, I'm ZeT;</div>
