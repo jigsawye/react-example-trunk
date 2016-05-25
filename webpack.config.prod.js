@@ -13,12 +13,8 @@ module.exports = {
   },
 
   resolve: {
-    root: [
-      path.join(__dirname, 'src')
-    ],
     extensions: ['', '.js', '.jsx','css', '.scss']
   },
-
 
   module: {
     loaders: [{
@@ -38,15 +34,11 @@ module.exports = {
     }]
   },
   plugins: [
-    new ExtractTextPlugin("bundle.css"),
+    new ExtractTextPlugin('bundle.css'),
     new webpack.DefinePlugin({
       'process.env': {
-        'NODE_ENV': JSON.stringify('production')
+        NODE_ENV: JSON.stringify('production')
       }
-    }),
-    new webpack.ProvidePlugin({
-      React: 'react',
-      ReactDOM:'react-dom'
     }),
     new webpack.optimize.UglifyJsPlugin({
       compressor: {

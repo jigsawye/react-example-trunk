@@ -19,9 +19,6 @@ module.exports = {
   },
 
   resolve: {
-    root: [
-      path.join(__dirname, 'src')
-    ],
     extensions: ['', '.js', '.jsx','css', '.scss']
   },
 
@@ -42,12 +39,9 @@ module.exports = {
     }]
   },
 
-  devtool: 'cheap-module-eval-source-map',
+  devtool: 'eval',
 
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.ProvidePlugin({
-      React: 'react'
-    })
   ]
 };

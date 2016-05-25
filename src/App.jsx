@@ -1,10 +1,10 @@
-require('vendor/vendor.scss');
+import { Component } from 'react';
+import { Link } from 'react-router';
+import './vendor/vendor.scss';
 
-var Router = require('react-router'),
-  Link = Router.Link;
-
-var App = React.createClass({
-  render: function() {
+export default class App extends Component {
+  render() {
+    const { children } = this.props;
     return (
       <div>
         React Example
@@ -12,10 +12,8 @@ var App = React.createClass({
           <Link className="btn btn-success" to="/counter">counter</Link>
           <Link className="btn btn-danger" to="/about">about</Link>
         </div>
-        {this.props.children}
+        {children}
       </div>
     );
   }
-});
-
-module.exports = App;
+}

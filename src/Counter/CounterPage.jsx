@@ -1,26 +1,32 @@
-require('Counter/CounterPage.scss');
+import { Component } from 'react';
+import Counter from './Counter';
+import 'Counter/CounterPage.scss';
 
-var Counter = require('Counter/Counter.jsx');
-var CounterPage = React.createClass({
-  getInitialState: function() {
-    return {
-      increment: 10
-    };
-  },
-  randIncrement: function() {
-    this.setState({
-      increment: Math.floor((Math.random() * 50) + 1)
-    });
-  },
-  render: function() {
+export default class CounterPage extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { increment: 10 };
+  }
+
+  randIncrement() {
+    const increment = Math.floor(Math.random() * 50 + 1);
+    this.setState({ increment });
+  }
+
+  render() {
+    const { increment } = this.state;
+
     return (
       <div>
-        <Counter increment={this.state.increment}/>
+        <Counter increment={increment}/>
         <Counter increment={5}/>
-        <button onClick={this.randIncrement} className="btn btn-primary">Random first counter's increment</button>
+        <button
+          onClick={this.randIncrement}
+          className="btn btn-primary"
+        >
+          Random first counter's increment
+        </button>
       </div>
     );
   }
-});
-
-module.exports = CounterPage;
+}

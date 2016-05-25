@@ -1,31 +1,34 @@
-var Counter = React.createClass({
-  getInitialState: function(){
-    return {
-      counter: 0
-    }
-  },
+import { Component } from 'react';
 
-  tick: function() {
+export default class Counter extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { counter: 0 };
+  }
+
+  tick() {
+    const { counter } = this.state;
+    const { increment } = this.props;
     this.setState({
-      counter: this.state.counter + this.props.increment
+      counter: counter + increment,
     });
-  },
+  }
 
-  componentWillMount: function() {
+  componentWillMount() {
     this.interval = setInterval(this.tick, 1000);
-  },
+  }
 
-  componentWillUnmount: function() {
+  componentWillUnmount() {
     clearInterval(this.interval);
-  },
+  }
 
-  render: function() {
+  render() {
+    const { increment } = this.props;
+    const { counter } = this.state;
     return (
       <h1>
-        Counter ({this.props.increment}): {this.state.counter}
+        Counter ({increment}): {counter}
       </h1>
     );
   }
-});
-
-module.exports = Counter;
+}

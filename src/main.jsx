@@ -1,10 +1,8 @@
-var ReactDOM = require('react-dom');
-var ReactRouter = require('react-router'),
-  Router = ReactRouter.Router,
-  browserHistory = ReactRouter.browserHistory;
+import { render } from 'react-dom';
+import { Router, browserHistory } from 'react-router';
+import routes from './routes';
 
-var routes = require('routes.jsx');
-
-ReactDOM.render((
-  <Router children={routes}  history={browserHistory}/>
-), document.getElementById('root'));
+render(
+  <Router children={routes}  history={browserHistory}/>,
+  document.getElementById('root')
+);

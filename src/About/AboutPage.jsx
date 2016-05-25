@@ -1,12 +1,11 @@
-var AboutPage = React.createClass({
+import { Component } from 'react';
 
-  render: function() {
+export default class AboutPage extends Component {
+  render() {
     return (
       <div>
         hi, I'm ZeT;
       </div>
     );
   }
-});
-
-module.exports = AboutPage;
+}

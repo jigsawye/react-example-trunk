@@ -1,18 +1,12 @@
-var ReactRouter = require('react-router'),
-  Route = ReactRouter.Route,
-  IndexRoute = ReactRouter.IndexRoute,
-  Link = ReactRouter.Link;
+import { Route, IndexRoute, Link } from 'react-router';
+import App from './App';
+import CounterPage from './Counter/CounterPage';
+import AboutPage from './About/AboutPage';
 
-var App = require('App.jsx');
-var CounterPage = require('Counter/CounterPage.jsx');
-var AboutPage = require('About/AboutPage.jsx');
-
-var routes = (
+export default (
   <Route path="/" component={App}>
     <IndexRoute component={CounterPage}/>
     <Route path="counter" component={CounterPage}/>
     <Route path="about" component={AboutPage}/>
   </Route>
 );
-
-module.exports = routes;
